@@ -17,7 +17,7 @@ sudo apt-get update && sudo apt-get install terraform -y
 terraform -version
 -------------------------------------------------------------------------------------------
 # Kubeconfig
-aws eks --region ap-south-1 update-kubeconfig --name devopsshack-cluster
+aws eks --region us-east-1 update-kubeconfig --name devopsshack-cluster
 ---------------------------------------------------------------------------------
 
 #
@@ -54,10 +54,10 @@ helm version
 ===============================================================================================
 
 
-eksctl utils associate-iam-oidc-provider --region ap-south-1 --cluster devopsshack-cluster --approve
+eksctl utils associate-iam-oidc-provider --region us-east-1 --cluster devopsshack-cluster --approve
 -----------------------------------------------------------------------------------------------
 eksctl create iamserviceaccount \
-  --region ap-south-1 \
+  --region us-east-1 \
   --name ebs-csi-controller-sa \
   --namespace kube-system \
   --cluster devopsshack-cluster \
